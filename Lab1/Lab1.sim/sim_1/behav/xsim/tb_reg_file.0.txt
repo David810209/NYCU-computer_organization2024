@@ -1,0 +1,6 @@
+11111 00001 1 00001 0xaa114514  // write in first half cycle & read in last half cycle
+00001 11111 0 11111 0xaa114514
+01111 00000 1 00000 0xf1919810  // check if zero is written
+00000 01111 0 01111 0xf1919810
+reset
+00001 11111 1 11111 0xaa114514  // write after reset

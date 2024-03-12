@@ -1,0 +1,7 @@
+0xffff0000 0x0000ffff AND 0x00000000 1 0  // each line contains 1 case: {a b OP result [zero overflow]} separated by space
+0x3113c398 0x088e4954  OR 0x399fcbdc 0 0  // numbers `a`, `b`, `result` can be hex(0x), binary(0b) or decimal
+        -1          1 ADD          0 1 0  // `OP` must be either AND, OR, ADD, SUB, SLT or NOR
+0x7eda5023 0x2ec36ae5 SUB 0x5016e53e 0 0  // `zero` and `overflow` must be either 0 or 1
+0x7eda5023 0x2ec36ae5 SUB 0x5016e53e      // `zero` and `overflow` can be null (only test `result`)
+        -1          1 SLT          1 0 0
+0x00000000 0x00000000 NOR 0xffffffff 0 0  // try to add your own case!

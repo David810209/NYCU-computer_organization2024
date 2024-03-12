@@ -1,0 +1,15 @@
+Time resolution is 1 ps
+#### tb_reg_file.sv ####
+==== Test  0 RUNNING ====
+[case  0] 11111 00001 1 00001 0xaa114514
+[case  1] 00001 11111 0 11111 0xaa114514
+[case  2] 01111 00000 1 00000 0xf1919810
+[case  3] 00000 01111 0 01111 0xf1919810
+[case  4] reset
+[case  5] 00001 11111 1 11111 0xaa114514
+==== Test  0 PASSED ====
+#### Test Result ####
+Passed  1 : 0
+Failed  0 :
+#### all passed!
+$finish called at time : 27 ns : File "C:/zichen/CO/Lab1/Lab1/testbench/tb_reg_file.sv" Line 58
