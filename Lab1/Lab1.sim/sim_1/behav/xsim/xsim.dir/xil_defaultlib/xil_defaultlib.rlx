@@ -2,10 +2,10 @@
 2020.2
 May  7 2023
 15:24:31
-C:/zichen/CO/Lab1/Lab1/Lab1.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,uvm,,,,,,
-C:/zichen/CO/Lab1/Lab1/src/alu.v,1710159658,verilog,,C:/zichen/CO/Lab1/Lab1/src/bit_alu.v,,alu,,uvm,,,,,,
-C:/zichen/CO/Lab1/Lab1/src/bit_alu.v,1710153064,verilog,,C:/zichen/CO/Lab1/Lab1/src/msb_bit_alu.v,,bit_alu,,uvm,,,,,,
-C:/zichen/CO/Lab1/Lab1/src/msb_bit_alu.v,1710155034,verilog,,,,msb_bit_alu,,uvm,,,,,,
-C:/zichen/CO/Lab1/Lab1/src/reg_file.v,1710187437,verilog,,,,reg_file,,uvm,,,,,,
-C:/zichen/CO/Lab1/Lab1/testbench/tb_alu.sv,1710127826,systemVerilog,,,,tb_alu,,uvm,,,,,,
-C:/zichen/CO/Lab1/Lab1/testbench/tb_reg_file.sv,1710127827,systemVerilog,,,,tb_reg_file,,uvm,,,,,,
+C:/zichen/CO/Lab1/Lab1.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,uvm,,,,,,
+C:/zichen/CO/Lab1/src/alu.v,1711111788,verilog,,C:/zichen/CO/Lab1/src/bit_alu.v,,alu,,uvm,,,,,,
+C:/zichen/CO/Lab1/src/bit_alu.v,1710153064,verilog,,C:/zichen/CO/Lab1/src/msb_bit_alu.v,,bit_alu,,uvm,,,,,,
+C:/zichen/CO/Lab1/src/msb_bit_alu.v,1711112400,verilog,,,,msb_bit_alu,,uvm,,,,,,
+C:/zichen/CO/Lab1/src/reg_file.v,1710187498,verilog,,,,reg_file,,uvm,,,,,,
+C:/zichen/CO/Lab1/testbench/tb_alu.sv,1710127826,systemVerilog,,,,tb_alu,,uvm,,,,,,
+C:/zichen/CO/Lab1/testbench/tb_reg_file.sv,1711898569,systemVerilog,,,,tb_reg_file,,uvm,,,,,,

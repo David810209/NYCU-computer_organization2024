@@ -5,3 +5,12 @@
 0x7eda5023 0x2ec36ae5 SUB 0x5016e53e      // `zero` and `overflow` can be null (only test `result`)
         -1          1 SLT          1 0 0
 0x00000000 0x00000000 NOR 0xffffffff 0 0  // try to add your own case!
+0x7FFFFFFF 0x00000001 ADD 0x80000000 0 1  //overflow
+0x80000000 0xFFFFFFFF ADD 0x7FFFFFFF 0 1  //overflow
+0x80000000 0x00000001 SUB 0x7FFFFFFF 0 1 //overflow
+0x00000003 0x00000002 SUB 0x00000001 0 0 //sub
+0x00000001 0x00000002 SLT 0x00000001 0 0 //slt
+0x00000001 0x80000000 SLT          0 1 0
+0xffffffff 0x80000000 SLT          0 1 0
+0x80000000 0x80000000 SLT          0 1 0
+0x7fffffff 0x80000000 ADD 0xffffffff 0 0

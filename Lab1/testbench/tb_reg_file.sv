@@ -11,8 +11,8 @@ module tb_reg_file #(
     reg         reg_write = 0;
     reg  [ 4:0] write_reg = 0;
     reg  [31:0] write_data = 0;
-    wire [31:0] read_data_1 = 0;
-    wire [31:0] read_data_2 = 0;
+    wire [31:0] read_data_1;
+    wire [31:0] read_data_2;
 
     reg_file reg_file (
         .clk        (clk),
@@ -102,13 +102,13 @@ module tb_reg_file #(
                              reg_write, write_reg, write_data);
                     /* before write */
                     #1;  // wait for combinational logic
-                    if (read_data_1 != ans_registers[read_reg_1]) begin
+                    if (read_data_1 !== ans_registers[read_reg_1]) begin
                         $display("wrong `read_data_1` before write: expected 0x%8h found 0x%8h !",
                                  ans_registers[read_reg_1], read_data_1);
                         ret = 1;
                         return;
                     end
-                    if (read_data_2 != ans_registers[read_reg_2]) begin
+                    if (read_data_2 !== ans_registers[read_reg_2]) begin
                         $display("wrong `read_data_2` before write: expected 0x%8h found 0x%8h !",
                                  ans_registers[read_reg_2], read_data_2);
                         ret = 1;
@@ -117,23 +117,22 @@ module tb_reg_file #(
                     #1 clk = 1;  // each cycle has 2 time units of 1 and 2 time units of 0
                     /* after write */
                     if (reg_write) ans_registers[write_reg] = (write_reg == 0) ? 0 : write_data;
-                    #2;  // wait for combinational & sequential logic
-                    if (read_data_1 != ans_registers[read_reg_1]) begin
+                    #1;  // wait for combinational & sequential logic
+                    if (read_data_1 !== ans_registers[read_reg_1]) begin
                         $display("wrong `read_data_1` after write: expected 0x%8h found 0x%8h !",
                                  ans_registers[read_reg_1], read_data_1);
                         ret = 1;
                         return;
                     end
-                    if (read_data_2 != ans_registers[read_reg_2]) begin
+                    if (read_data_2 !== ans_registers[read_reg_2]) begin
                         $display("wrong `read_data_2` after write: expected 0x%8h found 0x%8h !",
                                  ans_registers[read_reg_2], read_data_2);
                         ret = 1;
                         return;
                     end
-                    ans_registers[0] = reg_file.registers[0];
-                    if (reg_file.registers !== ans_registers) begin
-                        $display("wrong write or failed write!: ");
-                        for (int i = 0; i < 32; i++) begin
+                    if (reg_file.registers[1:31] !== ans_registers[1:31]) begin  // skip $0
+                        $display("registers not equal: ");
+                        for (int i = 1; i < 32; i++) begin
                             if (reg_file.registers[i] !== ans_registers[i]) begin
                                 $display("reg %2d expect 0x%h found 0x%h", i,
                                          reg_file.registers[i], ans_registers[i]);
@@ -142,7 +141,7 @@ module tb_reg_file #(
                         ret = 1;
                         return;
                     end
-                    clk = 0;
+                    #1 clk = 0;
                 end else if (line.substr(0, 4) == "reset") begin
                     $display("[case %2d] reset", i);
                     rstn          = 0;

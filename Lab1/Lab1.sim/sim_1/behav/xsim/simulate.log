@@ -12,4 +12,4 @@ Time resolution is 1 ps
 Passed  1 : 0
 Failed  0 :
 #### all passed!
-$finish called at time : 27 ns : File "C:/zichen/CO/Lab1/Lab1/testbench/tb_reg_file.sv" Line 58
+$finish called at time : 27 ns : File "C:/zichen/CO/Lab1/testbench/tb_reg_file.sv" Line 58

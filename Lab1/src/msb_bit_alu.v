@@ -37,11 +37,11 @@ module msb_bit_alu (
 
     //slt 
     //don't know how to do
-    assign set = sum ^ overflow;
+    assign set = sum ^ overflow_count;
 
     //overflow
-    assign overflow = carry_in ^ carry_out;//carryin of msb != carryout msb 
-
+    assign overflow = (operation == 2'b11) ? 0 : carry_in ^ carry_out;//carryin of msb != carryout msb 
+    assign overflow_count =  carry_in ^ carry_out;
 
     /* [step 3] using a mux to assign result */
     always @(*) begin  // `*` auto captures sensitivity ports, now it's combinational logic

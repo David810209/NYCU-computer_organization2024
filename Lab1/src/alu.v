@@ -106,13 +106,15 @@ module alu (
      */
 
     //carryin and carryout
+    /*
     genvar i;
     generate
         for (i = 0; i < 31; i = i + 1) begin : carry_chain
             assign carry_in[i+1] = carry_out[i];
         end
     endgenerate
-
+*/
+    assign carry_in[31:1] = carry_out[30:0];
     //nor handle
     assign result = (ALU_ctl == 4'b1100) ? ~tmp_result : tmp_result;
 
