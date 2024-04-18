@@ -1,0 +1,29 @@
+[00400000] 039c4820 add $9, $28, $28                ; 11: add     $t1, $gp, $gp   # $t1 = 2 * $gp
+[00400004] 03895022 sub $10, $28, $9                ; 12: sub     $t2, $gp, $t1   # $t2 = - $gp
+[00400008] 013c202a slt $4, $9, $28                 ; 13: slt     $a0, $t1, $gp   # $a0 = 0
+[0040000c] 0389282a slt $5, $28, $9                 ; 14: slt     $a1, $gp, $t1   # $a1 = 1
+[00400010] 019c102a slt $2, $12, $28                ; 15: slt     $v0, $t4, $gp   # $v0 = 1 (since $t4 is negative)
+[00400014] 038c182a slt $3, $28, $12                ; 16: slt     $v1, $gp, $t4   # $v1 = 0
+[00400018] 013c4022 sub $8, $9, $28                 ; 17: sub     $t0, $t1, $gp   # $t0 = $gp
+[0040001c] 011c802a slt $16, $8, $28                ; 18: slt     $s0, $t0, $gp   # $s0 = 0
+[00400020] 0388882a slt $17, $28, $8                ; 19: slt     $s1, $gp, $t0   # $s1 = 0
+[00400024] 012a0025 or $0, $9, $10                  ; 20: or      $zero, $t1, $t2 # test write to zero
+[00400028] 012a0024 and $0, $9, $10                 ; 21: and     $zero, $t1, $t2
+[0040002c] 012a5825 or $11, $9, $10                 ; 22: or      $t3, $t1, $t2   # test OR
+[00400030] 012a6024 and $12, $9, $10                ; 23: and     $t4, $t1, $t2   # test AND
+[00400034] 00000000 nop                             ; 24: nop                     # test NOP
+[00400038] 3c011001 lui $1, 4097                    ; 25: lw      $t5, hun     # test LW
+[0040003c] 8c2d8000 lw $13, -32768($1)
+[00400040] af8d0008 sw $13, 8($28)                  ; 26: sw      $t5, 8($gp)     # test SW
+[00400044] 111c0002 beq $8, $28, 8 [btg-0x00400044] ; 27: beq     $t0, $gp, btg   # [bst] should branch
+[00400048] 001cc825 or $25, $0, $28                 ; 28: or      $t9, $zero, $gp # should not execute
+[0040004c] 8f980000 lw $24, 0($28)                  ; 29: lw      $t8, 0($gp)     # should not execute
+[00400050] 08100017 j 0x0040005c [end]              ; 30: j       end             # [btg] should jump
+[00400054] 001c7825 or $15, $0, $28                 ; 31: or      $t7, $zero, $gp # should not execute
+[00400058] 8f8e0000 lw $14, 0($28)                  ; 32: lw      $t6, 0($gp)     # should not execute
+[0040005c] 3c011001 lui $1, 4097                    ; 33: lw      $t5, hah        # [end]
+[00400060] 8c2d8004 lw $13, -32764($1)
+[00400064] af8d000c sw $13, 12($28)                 ; 34: sw      $t5, 12($gp)
+[00400068] 101cfff6 beq $0, $28, -40 [bst-0x00400068]; 35: beq     $zero, $gp, bst # should not branch
+[0040006c] 3c01a114 lui $1, -24300                  ; 36: li      $a3, 0xa114514a # test li (lui, ori)
+[00400070] 3427514a ori $7, $1, 20810

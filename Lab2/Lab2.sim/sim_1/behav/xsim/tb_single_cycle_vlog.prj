@@ -1,0 +1,20 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../src/alu.v" \
+"../../../../src/alu_control.v" \
+"../../../../../Lab1/src/bit_alu.v" \
+"../../../../src/control.v" \
+"../../../../src/data_mem.v" \
+"../../../../src/instr_mem.v" \
+"../../../../../Lab1/src/msb_bit_alu.v" \
+"../../../../src/reg_file.v" \
+"../../../../src/single_cycle.v" \
+
+sv xil_defaultlib  \
+"../../../../testbench/tb_single_cycle.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,15 +1,25 @@
 Time resolution is 1 ps
-#### tb_reg_file.sv ####
+#### tb_alu.sv ####
 ==== Test  0 RUNNING ====
-[case  0] 11111 00001 1 00001 0xaa114514
-[case  1] 00001 11111 0 11111 0xaa114514
-[case  2] 01111 00000 1 00000 0xf1919810
-[case  3] 00000 01111 0 01111 0xf1919810
-[case  4] reset
-[case  5] 00001 11111 1 11111 0xaa114514
+[case  0] 0xffff0000 0000 0x0000ffff            
+[case  1] 0x3113c398 0001 0x088e4954            
+[case  2] 0xffffffff 0010 0x00000001            
+[case  3] 0x7eda5023 0110 0x2ec36ae5            
+[case  4] 0x7eda5023 0110 0x2ec36ae5 (ignore zv)
+[case  5] 0xffffffff 0111 0x00000001            
+[case  6] 0x00000000 1100 0x00000000            
+[case  7] 0x7fffffff 0010 0x00000001            
+[case  8] 0x80000000 0010 0xffffffff            
+[case  9] 0x80000000 0110 0x00000001            
+[case 10] 0x00000003 0110 0x00000002            
+[case 11] 0x00000001 0111 0x00000002            
+[case 12] 0x00000001 0111 0x80000000            
+[case 13] 0xffffffff 0111 0x80000000            
+[case 14] 0x80000000 0111 0x80000000            
+[case 15] 0x7fffffff 0010 0x80000000            
 ==== Test  0 PASSED ====
 #### Test Result ####
 Passed  1 : 0
 Failed  0 :
 #### all passed!
-$finish called at time : 27 ns : File "C:/zichen/CO/Lab1/testbench/tb_reg_file.sv" Line 58
+$finish called at time : 17 ns : File "C:/zichen/CO/Lab1/testbench/tb_alu.sv" Line 64
