@@ -40,7 +40,7 @@ module alu (
             4'b0001: operation = 2'b01;  // OR
             4'b0010: operation = 2'b10;  // ADD
             4'b0110: operation = 2'b10;  // SUB
-            4'b1100: operation = 2'b00;  // NOR 
+            4'b1100: operation = 2'b01;  // NOR 
             4'b0111: operation = 2'b11;  // SLT
             default: operation = 2'b00;  
         endcase

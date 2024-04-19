@@ -3,10 +3,10 @@
 # SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
 # IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
 # SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
-# Start of session at: Fri Apr 19 23:22:01 2024
-# Process ID: 22436
+# Start of session at: Mon Apr  1 23:45:28 2024
+# Process ID: 1640
 # Current directory: C:/zichen/CO/Lab1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23672 C:\zichen\CO\Lab1\Lab1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19016 C:\zichen\CO\Lab1\Lab1.xpr
 # Log file: C:/zichen/CO/Lab1/vivado.log
 # Journal file: C:/zichen/CO/Lab1\vivado.jou
 # Running On: David, OS: Windows, CPU Frequency: 2688 MHz, CPU Physical cores: 14, Host memory: 16785 MB
@@ -80,5 +80,123 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'.
-open_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1498.332 ; gain = 361.109
+open_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1495.371 ; gain = 19.586
 update_compile_order -fileset sources_1
+set_property top tb_alu [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_alu'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/zichen/CO/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'C:/Xilinx/Vivado/2023.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_alu' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/zichen/CO/Lab1/Lab1.sim/sim_1/behav/xsim/tb_reg_file.0.txt'
+INFO: [SIM-utils-43] Exported 'C:/zichen/CO/Lab1/Lab1.sim/sim_1/behav/xsim/tb_alu.0.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/zichen/CO/Lab1/Lab1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_alu_vlog.prj"
+ECHO 已關閉。
+ECHO 已關閉。
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/zichen/CO/Lab1/Lab1.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_alu_behav xil_defaultlib.tb_alu xil_defaultlib.glbl -log elaborate.log"
+ECHO 已關閉。
+ECHO 已關閉。
+Vivado Simulator v2023.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2023.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_alu_behav xil_defaultlib.tb_alu xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/zichen/CO/Lab1/Lab1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_alu_behav -key {Behavioral:sim_1:Functional:tb_alu} -tclbatch {tb_alu.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_alu.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+#### tb_alu.sv ####
+==== Test  0 RUNNING ====
+[case  0] 0xffff0000 0000 0x0000ffff            
+[case  1] 0x3113c398 0001 0x088e4954            
+[case  2] 0xffffffff 0010 0x00000001            
+[case  3] 0x7eda5023 0110 0x2ec36ae5            
+[case  4] 0x7eda5023 0110 0x2ec36ae5 (ignore zv)
+[case  5] 0xffffffff 0111 0x00000001            
+[case  6] 0x00000000 1100 0x00000000            
+[case  7] 0x7fffffff 0010 0x00000001            
+[case  8] 0x80000000 0010 0xffffffff            
+[case  9] 0x80000000 0110 0x00000001            
+[case 10] 0x00000003 0110 0x00000002            
+[case 11] 0x00000001 0111 0x00000002            
+[case 12] 0x00000001 0111 0x80000000            
+[case 13] 0xffffffff 0111 0x80000000            
+[case 14] 0x80000000 0111 0x80000000            
+[case 15] 0x7fffffff 0010 0x80000000            
+==== Test  0 PASSED ====
+#### Test Result ####
+Passed  1 : 0
+Failed  0 :
+#### all passed!
+$finish called at time : 17 ns : File "C:/zichen/CO/Lab1/testbench/tb_alu.sv" Line 64
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_alu_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 1566.531 ; gain = 19.746
+launch_runs synth_1 -jobs 10
+WARNING: [Vivado 12-7122] Auto Incremental Compile:: No reference checkpoint was found in run synth_1. Auto-incremental flow will not be run, the standard flow will be run instead.
+[Mon Apr  1 23:46:39 2024] Launched synth_1...
+Run output will be captured here: C:/zichen/CO/Lab1/Lab1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010iclg225-1L
+INFO: [Device 21-403] Loading part xc7z010iclg225-1L
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1906.309 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2023.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1991.680 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 2135.430 ; gain = 554.641
+reset_run synth_1
+INFO: [Project 1-1160] Copying file C:/zichen/CO/Lab1/Lab1.runs/synth_1/alu.dcp to C:/zichen/CO/Lab1/Lab1.srcs/utils_1/imports/synth_1 and adding it to utils fileset
+launch_runs synth_1 -jobs 10
+[Mon Apr  1 23:48:16 2024] Launched synth_1...
+Run output will be captured here: C:/zichen/CO/Lab1/Lab1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z010iclg225-1L
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2616.648 ; gain = 0.000
+INFO: [Project 1-479] Netlist was created with Vivado 2023.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2616.648 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr  1 23:49:15 2024...
