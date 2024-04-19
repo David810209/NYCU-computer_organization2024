@@ -16,3 +16,4 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/reg_file.v" i
 INFO: [VRFC 10-311] analyzing module reg_file
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/single_cycle.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module single_cycle
+WARNING: [VRFC 10-3380] identifier 'pc_p4' is used before its declaration [C:/zichen/CO/Lab2/src/single_cycle.v:172]

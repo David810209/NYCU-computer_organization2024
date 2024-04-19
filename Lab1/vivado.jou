@@ -14,3 +14,18 @@
 start_gui
 open_project C:/zichen/CO/Lab1/Lab1.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+source tb_alu.tcl
+close_sim
+launch_simulation
+source tb_alu.tcl
+close_sim
+launch_simulation
+source tb_alu.tcl
+close_sim
+launch_simulation
+source tb_alu.tcl
+close_sim
+launch_simulation
+source tb_alu.tcl
+close_sim

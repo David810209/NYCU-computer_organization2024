@@ -5,11 +5,11 @@ SW Build: 3865809 on Sun May  7 15:05:29 MDT 2023
 IP Build: 3864474 on Sun May  7 20:36:21 MDT 2023
 IP Build: 3864474 on Sun May  7 20:36:21 MDT 2023
 
-Process ID (PID): 22436
+Process ID (PID): 9492
 License: Customer
 Mode: GUI Mode
 
-Current time: 	Fri Apr 19 23:22:17 CST 2024
+Current time: 	Sat Apr 20 00:07:50 CST 2024
 Time zone: 	Taipei Standard Time (Asia/Taipei)
 
 OS: Windows 11
@@ -34,7 +34,7 @@ Java maximum memory (-Xmx):	 3 GB
 
 User name: 	David
 User home directory: C:/Users/a1050
-User working directory: C:/zichen/CO/Lab1
+User working directory: C:/zichen/CO/Lab2
 User country: 	TW
 User language: 	zh
 User locale: 	zh_TW
@@ -48,15 +48,15 @@ Vivado preferences file: C:/Users/a1050/AppData/Roaming/Xilinx/Vivado/2023.1/viv
 Vivado preferences directory: C:/Users/a1050/AppData/Roaming/Xilinx/Vivado/2023.1/
 Vivado layouts directory: C:/Users/a1050/AppData/Roaming/Xilinx/Vivado/2023.1/data/layouts
 PlanAhead jar file: 	C:/Xilinx/Vivado/2023.1/lib/classes/planAhead.jar
-Vivado log file: 	C:/zichen/CO/Lab1/vivado.log
-Vivado journal file: 	C:/zichen/CO/Lab1/vivado.jou
-Engine tmp dir: 	C:/zichen/CO/Lab1/.Xil/Vivado-22436-David
+Vivado log file: 	C:/zichen/CO/Lab2/vivado.log
+Vivado journal file: 	C:/zichen/CO/Lab2/vivado.jou
+Engine tmp dir: 	C:/zichen/CO/Lab2/.Xil/Vivado-9492-David
 Non-Default Parameters:	[]
 
 Xilinx & AMD Environment Variables
 --------------------------------------------------------------------------------------------
 RDI_APPROOT: C:/Xilinx/Vivado/2023.1
-RDI_ARGS:  -gui_launcher_event rodinguilauncherevent23672 "C:\zichen\CO\Lab1\Lab1.xpr"
+RDI_ARGS:  -gui_launcher_event rodinguilauncherevent12600 "C:\zichen\CO\Lab2\Lab2.xpr"
 RDI_ARGS_FUNCTION: RDI_EXEC_DEFAULT
 RDI_BASEROOT: C:/Xilinx/Vivado
 RDI_BINDIR: C:/Xilinx/Vivado/2023.1/bin
@@ -84,7 +84,7 @@ RDI_PYTHON3_VERSION: 3.8.3
 RDI_PYTHONHOME: C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3
 RDI_PYTHONPATH: C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3;C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\bin;C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\lib;C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\lib\site-packages
 RDI_PYTHON_LD_LIBPATH: C:/Xilinx/Vivado/2023.1\tps\win64\python-3.8.3\lib
-RDI_SESSION_INFO: C:\zichen\CO\Lab1:DAVID-2024-04-19¶g¤­_23-21-59.72
+RDI_SESSION_INFO: C:\zichen\CO\Lab2:DAVID-2024-04-20¶g¤»_0-07-16.53
 RDI_SHARED_DATA: C:/Xilinx/SharedData/2023.1/data
 RDI_TPS_ROOT: C:/Xilinx/Vivado/2023.1/tps/win64
 RDI_USE_JDK17: True
@@ -96,12 +96,12 @@ XILINX_PLANAHEAD: C:/Xilinx/Vivado/2023.1
 XILINX_VIVADO: C:/Xilinx/Vivado/2023.1
 XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2023.1
 _RDI_BINROOT: C:\Xilinx\Vivado\2023.1\bin
-_RDI_CWD: C:\zichen\CO\Lab1
+_RDI_CWD: C:\zichen\CO\Lab2
 
 
 GUI allocated memory:	512 MB
 GUI max memory:		4,072 MB
-Engine allocated memory: 823 MB
+Engine allocated memory: 813 MB
 
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
@@ -109,19 +109,16 @@ Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 */
 
 // TclEventType: START_GUI
-// WARNING: HEventQueue.dispatchEvent() is taking  1645 ms.
 // Tcl Message: start_gui 
 // TclEventType: PROJECT_OPEN_DIALOG
-// Opening Vivado Project: C:\zichen\CO\Lab1\Lab1.xpr. Version: Vivado v2023.1 
+// Opening Vivado Project: C:\zichen\CO\Lab2\Lab2.xpr. Version: Vivado v2023.1 
 // TclEventType: DEBUG_PROBE_SET_CHANGE
 // TclEventType: FLOW_ADDED
-// Tcl Message: open_project C:/zichen/CO/Lab1/Lab1.xpr 
-// HMemoryUtils.trashcanNow. Engine heap size: 854 MB. GUI used memory: 69 MB. Current time: 4/19/24, 11:22:18 PM CST
+// Tcl Message: open_project C:/zichen/CO/Lab2/Lab2.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 841 MB. GUI used memory: 66 MB. Current time: 4/20/24, 12:07:51 AM CST
 // TclEventType: MSGMGR_MOVEMSG
 // TclEventType: FILE_SET_CHANGE
 // TclEventType: FILE_SET_NEW
-// TclEventType: RUN_COMPLETED
-// TclEventType: RUN_STATUS_CHANGE
 // TclEventType: RUN_CURRENT
 // TclEventType: PROJECT_DASHBOARD_NEW
 // TclEventType: PROJECT_DASHBOARD_GADGET_NEW
@@ -137,11 +134,15 @@ Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 // TclEventType: PROJECT_DASHBOARD_GADGET_NEW
 // TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
 // TclEventType: PROJECT_NEW
-// [GUI Memory]: 127 MB (+131005kb) [00:00:20]
-// [Engine Memory]: 1,061 MB (+961104kb) [00:00:20]
-// WARNING: HEventQueue.dispatchEvent() is taking  2425 ms.
-// Tcl Message: open_project C:/zichen/CO/Lab1/Lab1.xpr 
-// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/zichen/CO/Lab1/Lab1.gen/sources_1'. 
+// Tcl Message: open_project C:/zichen/CO/Lab2/Lab2.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/zichen/CO/Lab2/Lab2.gen/sources_1'. 
 // Tcl Message: Scanning sources... Finished scanning sources 
-// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'. 
-// [Engine Memory]: 1,163 MB (+51307kb) [00:00:22]
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 117 MB (+120127kb) [00:00:27]
+// [Engine Memory]: 1,066 MB (+966638kb) [00:00:27]
+// WARNING: HEventQueue.dispatchEvent() is taking  3431 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2023.1/data/ip'. 
+// [Engine Memory]: 1,136 MB (+17267kb) [00:00:30]
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1478.238 ; gain = 364.238 
+// Project name: Lab2; location: C:/zichen/CO/Lab2; part: xc7z010iclg225-1L

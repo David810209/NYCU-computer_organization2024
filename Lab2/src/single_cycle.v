@@ -87,17 +87,20 @@ module single_cycle #(
 
     /* (Main) Control */  // named without `control_` prefix!
     wire [5:0] opcode;
-    wire reg_dst, alu_src, mem_to_reg, reg_write, mem_read, mem_write, branch;
+    wire reg_dst, jump, alu_src, mem_to_reg, reg_write, mem_read, mem_write, branch;
     wire [1:0] alu_op;
     control control (
         .opcode    (opcode),
         .reg_dst   (reg_dst),
+        .jump      (jump),
         .alu_src   (alu_src),
         .mem_to_reg(mem_to_reg),
         .reg_write (reg_write),
         .mem_read  (mem_read),
         .mem_write (mem_write),
         .branch    (branch),
+        .lui_op    (lui_op),
+        .ori_op    (ori_op),
         .alu_op    (alu_op)
     );
 
@@ -143,6 +146,12 @@ module single_cycle #(
     wire [31:0] extended_instr;
     assign extended_instr = { {16{instr_mem_instr[15]}}, instr_mem_instr[15:0] };
     assign alu_control_funct = instr_mem_instr[5:0];
+
+    //li
+    wire [15:0] immediate = instr_mem_instr[15:0];
+    wire [31:0] upper_immediate = {immediate,16'b0};
+    wire [31:0] lower_immediate = {16'b0,immediate};
+
     /** [step 3] Execution
      * The processor execute the instruction using ALU.
      * e.g. calculate result of R-type instr, address of load/store, branch or not.
@@ -155,15 +164,20 @@ module single_cycle #(
     /** [Check Yourself]
      * Can you describe what the result of ALU means and how it is calculated for each different instruction?
      */
-    assign alu_ALU_ctl = alu_control_operation;
+    assign alu_ALU_ctl = (lui_op | ori_op) ? 4'b0010 : alu_control_operation;
     assign alu_control_alu_op = alu_op;
     assign alu_a = reg_file_read_data_1;
     assign alu_b = alu_src ? extended_instr : reg_file_read_data_2;
     wire [31:0] branch_target_address;
-    assign branch_target_address = pc + 4 + (extended_instr << 2);
+    assign branch_target_address = pc_p4 + (extended_instr << 2);
     wire take_branch;
     assign take_branch = branch & alu_zero;
-    assign next_pc = take_branch ? branch_target_address : pc + 4;
+    
+    //jump
+    wire [31:0] jump_address, pc_p4;
+    assign pc_p4 = pc + 4;
+    assign jump_address = {pc_p4[31:28],instr_mem_instr[25:0], 2'b00};
+    assign next_pc = jump ?  jump_address : (take_branch ? branch_target_address : pc_p4);
 
     /** [step 4] Memory
      * The processor interact with Data Memory to execute load/store instr.
@@ -185,7 +199,10 @@ module single_cycle #(
      * 3. Wire the write control signal of Register File.
      */
     assign reg_file_write_reg = reg_dst ? instr_mem_instr[15:11] : instr_mem_instr[20:16];
-    assign reg_file_write_data = mem_to_reg ? data_mem_read_data : alu_result;
+    assign reg_file_write_data = (lui_op) ? upper_immediate :
+                                 (ori_op) ? (reg_file_read_data_1 | lower_immediate) :
+                                 (mem_to_reg) ? data_mem_read_data : alu_result;
+
     assign reg_file_reg_write =reg_write;
     /** [step 6] Clocking (sequential logic)
      * This define the behavior of processor when a new clock cycle comes.
