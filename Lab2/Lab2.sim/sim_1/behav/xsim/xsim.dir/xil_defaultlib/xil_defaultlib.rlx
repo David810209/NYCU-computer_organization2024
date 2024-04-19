@@ -11,5 +11,5 @@ C:/zichen/CO/Lab2/src/data_mem.v,1712061460,verilog,,C:/zichen/CO/Lab2/src/instr
 C:/zichen/CO/Lab2/src/instr_mem.v,1712061460,verilog,,C:/zichen/CO/Lab2/src/msb_bit_alu.v,,instr_mem,,uvm,,,,,,
 C:/zichen/CO/Lab2/src/msb_bit_alu.v,1711112400,verilog,,C:/zichen/CO/Lab2/src/reg_file.v,,msb_bit_alu,,uvm,,,,,,
 C:/zichen/CO/Lab2/src/reg_file.v,1713536169,verilog,,C:/zichen/CO/Lab2/src/single_cycle.v,,reg_file,,uvm,,,,,,
-C:/zichen/CO/Lab2/src/single_cycle.v,1713412506,verilog,,,,single_cycle,,uvm,,,,,,
+C:/zichen/CO/Lab2/src/single_cycle.v,1713539912,verilog,,,,single_cycle,,uvm,,,,,,
 C:/zichen/CO/Lab2/testbench/tb_single_cycle.sv,1713535180,systemVerilog,,,,tb_single_cycle,,uvm,,,,,,

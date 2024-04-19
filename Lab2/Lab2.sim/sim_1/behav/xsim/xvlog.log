@@ -1,0 +1,18 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/alu_control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_control
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/bit_alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bit_alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/control.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/data_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/instr_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instr_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/msb_bit_alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module msb_bit_alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/zichen/CO/Lab2/src/single_cycle.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module single_cycle
