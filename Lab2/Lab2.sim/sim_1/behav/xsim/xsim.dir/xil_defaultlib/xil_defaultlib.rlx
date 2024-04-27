@@ -6,7 +6,7 @@ C:/zichen/CO/Lab2/Lab2.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,u
 C:/zichen/CO/Lab2/src/alu.v,1714200420,verilog,,C:/zichen/CO/Lab2/src/alu_control.v,,alu,,uvm,,,,,,
 C:/zichen/CO/Lab2/src/alu_control.v,1714200431,verilog,,C:/zichen/CO/Lab2/src/bit_alu.v,,alu_control,,uvm,,,,,,
 C:/zichen/CO/Lab2/src/bit_alu.v,1714200439,verilog,,C:/zichen/CO/Lab2/src/control.v,,bit_alu,,uvm,,,,,,
-C:/zichen/CO/Lab2/src/control.v,1714197891,verilog,,C:/zichen/CO/Lab2/src/data_mem.v,,control,,uvm,,,,,,
+C:/zichen/CO/Lab2/src/control.v,1714201637,verilog,,C:/zichen/CO/Lab2/src/data_mem.v,,control,,uvm,,,,,,
 C:/zichen/CO/Lab2/src/data_mem.v,1714199271,verilog,,C:/zichen/CO/Lab2/src/instr_mem.v,,data_mem,,uvm,,,,,,
 C:/zichen/CO/Lab2/src/instr_mem.v,1714199276,verilog,,C:/zichen/CO/Lab2/src/msb_bit_alu.v,,instr_mem,,uvm,,,,,,
 C:/zichen/CO/Lab2/src/msb_bit_alu.v,1714199145,verilog,,C:/zichen/CO/Lab2/src/reg_file.v,,msb_bit_alu,,uvm,,,,,,
