@@ -164,7 +164,7 @@ module single_cycle #(
     /** [Check Yourself]
      * Can you describe what the result of ALU means and how it is calculated for each different instruction?
      */
-    assign alu_ALU_ctl = (lui_op | ori_op) ? 4'b0010 : alu_control_operation;
+    assign alu_ALU_ctl = alu_control_operation;
     assign alu_control_alu_op = alu_op;
     assign alu_a = reg_file_read_data_1;
     assign alu_b = alu_src ? extended_instr : reg_file_read_data_2;
