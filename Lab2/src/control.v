@@ -12,6 +12,7 @@
 /* checkout FIGURE 4.16/18 to understand each definition of control signals */
 module control (
     input  [5:0] opcode,      // the opcode field of a instruction is [?:?]
+    input  [5:0] funct,
     output       reg_dst,     // select register destination: rt(0), rd(1)
     output       alu_src,     // select 2nd operand of ALU: rt(0), sign-extended(1)
     output       mem_to_reg,  // select data write to register: ALU(0), memory(1)
@@ -34,16 +35,16 @@ module control (
     assign ori_op = opcode[0] & ~opcode[1] & opcode[2] & opcode[3] & ~opcode[4] & ~opcode[5];
     assign jump = ~opcode[0] & opcode[1] & ~opcode[2] & ~opcode[3] & ~opcode[4] & ~opcode[5];
 
-    wire r, lw, sw, beq;
+    wire r, lw, sw, beq, nop;
     assign r = ~opcode[0] & ~opcode[1] & ~opcode[2] & ~opcode[3] & ~opcode[4] & ~opcode[5];
-    assign lw = (opcode[0] & opcode[1] & ~opcode[2] & ~opcode[3] & ~opcode[4] & opcode[5]) |lui_op | ori_op;
+    assign lw = (opcode[0] & opcode[1] & ~opcode[2] & ~opcode[3] & ~opcode[4] & opcode[5]) ;
     assign sw = opcode[0] & opcode[1] & ~opcode[2] & opcode[3] & ~opcode[4] & opcode[5];
     assign beq = ~opcode[0] & ~opcode[1] & opcode[2] & ~opcode[3] & ~opcode[4] & ~opcode[5];
-
+    assign nop = r & (~|funct);
     assign reg_dst = r;
-    assign alu_src = lw || sw;
-    assign mem_to_reg = lw;
-    assign reg_write = r || lw;
+    assign alu_src = lw | sw;
+    assign mem_to_reg = lw ;
+    assign reg_write = (r & ~nop) | lw | lui_op | ori_op;
     assign mem_read = lw;
     assign mem_write = sw;
     assign branch = beq;

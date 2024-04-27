@@ -91,6 +91,7 @@ module single_cycle #(
     wire [1:0] alu_op;
     control control (
         .opcode    (opcode),
+        .funct     (alu_control_funct),
         .reg_dst   (reg_dst),
         .jump      (jump),
         .alu_src   (alu_src),
