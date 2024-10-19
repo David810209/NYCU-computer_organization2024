@@ -58,6 +58,9 @@ This lab introduces pipelining, where multiple instructions are executed simulta
 
 ## Lab 4: Pipelined Processor - Part 2
 In the final lab, we enhance the pipelined processor with hazard detection and resolution using forwarding and stalling techniques. The goal is to handle data and control hazards efficiently.
+### Grade
+I received a score of **80/100** for this lab. Unfortunately, due to time constraints, I wasn't able to fully investigate the cause of the lost points.
+
 
 ### Key Features:
 - **Forwarding Unit**: For handling data hazards by forwarding ALU results to earlier stages.
