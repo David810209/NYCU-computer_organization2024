@@ -1,8 +1,0 @@
-0.7
-2020.2
-May  7 2023
-15:24:31
-C:/zichen/CO/CO_Lab0/Lab0/Lab0.sim/sim_1/behav/xsim/glbl.v,1683266558,verilog,,,,glbl,,,,,,,,
-C:/zichen/CO/CO_Lab0/full_subtractor.v,1709017763,verilog,,C:/zichen/CO/CO_Lab0/half_subtractor.v,,Full_Subtractor,,,,,,,,
-C:/zichen/CO/CO_Lab0/half_subtractor.v,1709017390,verilog,,C:/zichen/CO/CO_Lab0/testbench.v,,Half_Subtractor,,,,,,,,
-C:/zichen/CO/CO_Lab0/testbench.v,1709016261,verilog,,,,testbench,,,,,,,,

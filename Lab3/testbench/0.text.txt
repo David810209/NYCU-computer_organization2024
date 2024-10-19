@@ -1,0 +1,20 @@
+[00400000] 8f840000 lw $4, 0($28)                   ; 10: lw      $a0, 0($gp)
+[00400004] 8f850004 lw $5, 4($28)                   ; 11: lw      $a1, 4($gp)
+[00400008] 00bc4020 add $8, $5, $28                 ; 12: add     $t0, $a1, $gp   # t0 = gp, since `lw $a1` is at ID
+[0040000c] 8f860008 lw $6, 8($28)                   ; 13: lw      $a2, 8($gp)
+[00400010] 00a54820 add $9, $5, $5                  ; 14: add     $t1, $a1, $a1   # t1 = 2, since `lw $a1` is at MEM (when this enter ID, lw enter WB)
+[00400014] 8f87000c lw $7, 12($28)                  ; 15: lw      $a3, 12($gp)
+[00400018] 00095022 sub $10, $0, $9                 ; 16: sub     $t2, $0, $t1    # t2 = 0, since `add $t1` is at MEM
+[0040001c] 00000000 nop                             ; 17: nop
+[00400020] 00c7582a slt $11, $6, $7                 ; 18: slt     $t3, $a2, $a3   # t3 = 1, Read after write need to wait for ? more instructions?
+[00400024] 00a6602a slt $12, $5, $6                 ; 19: slt     $t4, $a1, $a2   # t4 = 1
+[00400028] 038b6825 or $13, $28, $11                ; 20: or      $t5, $gp, $t3   # t5 = gp, since t3 has not been written yet
+[0040002c] 00ab7024 and $14, $5, $11                ; 21: and     $t6, $a1, $t3   # t6 = 1, since t3 is written in this cycle
+[00400030] 116c0006 beq $11, $12, 24 [end-0x00400030]; 22: beq     $t3, $t4, end   # taken
+[00400034] 00058820 add $17, $0, $5                 ; 23: add     $s1, $0, $a1    # will this executed even branch is taken? How about others?
+[00400038] 00069020 add $18, $0, $6                 ; 24: add     $s2, $0, $a2
+[0040003c] 00079820 add $19, $0, $7                 ; 25: add     $s3, $0, $a3
+[00400040] 00c6a020 add $20, $6, $6                 ; 26: add     $s4, $a2, $a2
+[00400044] 00c7a820 add $21, $6, $7                 ; 27: add     $s5, $a2, $a3
+[00400048] 00e7b020 add $22, $7, $7                 ; 28: add     $s6, $a3, $a3
+[0040004c] 0286b820 add $23, $20, $6                ; 29: add     $s7, $s4, $a2   # s7 = 2
